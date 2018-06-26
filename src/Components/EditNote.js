@@ -23,7 +23,7 @@ class EditNote extends Component {
   }
   componentWillMount() {
     const id = this.props.match.params.id
-    axios.get(`http://localhost:5000/api/notes/${id}`)
+    axios.get(`https://floating-reaches-71125.herokuapp.com/${id}`)
     .then(response => {
       this.setState(() => ({ note: response.data }))
       console.log(this.state.note)

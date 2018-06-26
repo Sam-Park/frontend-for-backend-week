@@ -23,7 +23,7 @@ class NewNote extends Component {
   }
 
   newNote = () => {
-    axios.post('http://localhost:5000/api/notes', 
+    axios.post('https://floating-reaches-71125.herokuapp.com/api/notes', 
     {
       title: this.state.title,
       content: this.state.content

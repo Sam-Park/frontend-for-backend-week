@@ -17,7 +17,7 @@ class NoteList extends Component {
 
   componentWillMount() {
     axios
-    .get('http://localhost:5000/api/notes')
+    .get('https://floating-reaches-71125.herokuapp.com/API/NOTES')
     .then(response => {
       const notes = response.data;
       this.setState(() => ({ notes }));

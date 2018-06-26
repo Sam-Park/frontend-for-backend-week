@@ -30,7 +30,7 @@ deleteHandle = e => {
     modal: !this.state.modal
   })
   const id = this.props.note._id
-  axios.delete(`http://localhost:5000/api/notes/${id}`)
+  axios.delete(`https://floating-reaches-71125.herokuapp.com/${id}`)
   .then(response => {
     console.log(response)
   })
