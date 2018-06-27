@@ -26,7 +26,7 @@ class SignUp extends Component {
 
   registerUser = () => {
     axios
-      .post("https://floating-reaches-71125.herokuapp.com/api/auth/register", {
+      .post("https://floating-reaches-71125.herokuapp.com/api/register", {
         username: this.state.username,
         password: this.state.password,
       })

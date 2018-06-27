@@ -24,7 +24,7 @@ class SignIn extends Component {
     logInUser = event => {
       event.preventDefault();
       axios
-        .post("https://https://floating-reaches-71125.herokuapp.com/api/auth/login", {
+        .post("https://https://floating-reaches-71125.herokuapp.com/api/login", {
           username: this.state.username,
           password: this.state.password
         })
