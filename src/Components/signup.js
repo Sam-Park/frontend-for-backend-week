@@ -1,16 +1,3 @@
-// server.post('https:/heroku/login/:id', auth, (req, res, next) => {
-//     const { username, password } = req.body;
-//     const { id } = req.params;
-
-//     User.findByid(id)
-//   generateToken({ username, password }) = Headers
-
-//     .then(res => {
-//         res.status(201).json(res)
-//         res.redirect('/home');
-//     })
-// })
-
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { InputGroup, Input, Col, Button, Container } from "reactstrap";
@@ -58,7 +45,7 @@ class SignUp extends Component {
   render() {
     const redirect = this.state.redirect;
     if (redirect) {
-      return <Redirect to="/dashboard" />;
+      return <Redirect to="/" />;
     }
     return (
       <div>

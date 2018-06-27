@@ -46,7 +46,7 @@ class SignIn extends Component {
     render() {
         const redirect = this.state.redirect
       if (redirect) {
-          return <Redirect to="/users" />
+          return <Redirect to="/notes" />
       }
         return (
         <div>
