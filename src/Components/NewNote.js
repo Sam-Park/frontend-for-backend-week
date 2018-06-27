@@ -69,7 +69,7 @@ class NewNote extends Component {
                 value={this.state.content}
               />
               <br />
-              <Link onClick={this.forceUpdate} to="/">
+              <Link onClick={this.forceUpdate} to="/notes">
                 <Button
                 onClick={this.newNote}
                   style={{

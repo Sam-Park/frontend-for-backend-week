@@ -9,7 +9,7 @@ class NavBar extends Component {
       <Nav className="navBar">
         <h1 style={{ textAlign: "left", fontFamily: "'Roboto', san-serif", fontWeight: "bold", lineHeight: "35px"}}>Lambda Notes</h1>
 
-        <Link to="/">
+        <Link to="/notes">
           <Button
             style={{
               fontSize: "18px",

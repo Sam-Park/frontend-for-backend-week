@@ -62,7 +62,7 @@ deleteHandle = e => {
             <br/>
             <br/>
             
-            <Link onClick={this.forceUpdate} to="/">
+            <Link onClick={this.forceUpdate} to="/notes">
               <Button
                 color="danger"
                 style={{
