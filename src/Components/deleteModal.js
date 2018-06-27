@@ -61,8 +61,8 @@ deleteHandle = e => {
             <h4>Are you sure you want to delete this?</h4>
             <br/>
             <br/>
-            {/* onClick={this.forceUpdate} */}
-            <Link  to="/">
+            
+            <Link onClick={this.forceUpdate} to="/">
               <Button
                 color="danger"
                 style={{
