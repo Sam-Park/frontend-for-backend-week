@@ -23,7 +23,7 @@ class EditNote extends Component {
   }
   componentWillMount() {
     const id = this.props.match.params.id
-    axios.get(`https://floating-reaches-71125.herokuapp.com/${id}`)
+    axios.get(`https://floating-reaches-71125.herokuapp.com/api/notes/${id}`)
     .then(response => {
       this.setState(() => ({ note: response.data }))
       console.log(this.state.note)
@@ -33,7 +33,7 @@ class EditNote extends Component {
   editNote = e => {
     e.preventDefault();
     const  id  = this.props.match.params.id
-    axios.put(`http://localhost:5000/api/notes/${id}`, {
+    axios.put(`https://floating-reaches-71125.herokuapp.com/api/notes/${id}`, {
       title: this.state.title,
       content: this.state.content
     })
