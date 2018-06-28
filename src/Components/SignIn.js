@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 import { Input, InputGroup, Button, Col, Form } from 'reactstrap';
 import NavBar from './NavBar'
+import "./NoteCss.css";
 class SignIn extends Component {
     constructor() {
       super();
@@ -50,7 +51,7 @@ class SignIn extends Component {
       }
         return (
         <div>
-          <NavBar  />
+          <NavBar  className="navBar" />
         <Form onSubmit={this.logInUser}>
           <InputGroup
    
