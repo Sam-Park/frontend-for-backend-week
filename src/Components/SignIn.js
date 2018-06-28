@@ -30,16 +30,11 @@ class SignIn extends Component {
           password: this.state.password
         })
         .then(res => {
-          console.log("res status", res.status)
-          if (res.status === 200) {
-            localStorage.setItem("authorization", res.data.token)
-
-            this.props.history.push('/notes')
-          }
           console.log("success!, you have been logged in!", res);
+            this.props.history.push('/notes')
         })
         .catch(error => {
-          console.log("Error", error);
+          console.log("Error", error.message);
         });
       this.setState({ username: "", password: "" });
   
