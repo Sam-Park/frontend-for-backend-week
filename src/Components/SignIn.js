@@ -31,6 +31,7 @@ class SignIn extends Component {
         })
         .then(res => {
           console.log("res status", res.status)
+          this.props.history.push('/notes')
           if (res.status === 200) {
             localStorage.setItem("authorization", res.data.token)
             this.setState({ redirect: true })

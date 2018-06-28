@@ -16,7 +16,6 @@ class EditNote extends Component {
   constructor() {
     super();
   this.state = {
-    note: {},
     title: '',
     content: '',
     }
@@ -25,7 +24,7 @@ class EditNote extends Component {
     const id = this.props.match.params.id
     axios.get(`https://floating-reaches-71125.herokuapp.com/api/notes/${id}`)
     .then(response => {
-      this.setState(() => ({ note: response.data }))
+      this.setState(() => ({ title: response.data.title, content: response.data.content }))
       console.log(this.state.note)
     })
   };
@@ -65,7 +64,6 @@ class EditNote extends Component {
               <Input style={{ paddingTop: "10px", paddingLeft: "20px", width: "60%"}}
                 type="text"
                 name="title"
-                placeholder="Note Title"
                onChange={this.handleChange}
                value={this.state.title}
               />
@@ -74,7 +72,6 @@ class EditNote extends Component {
                 style={{ paddingBottom: "400px", paddingTop: "20px", paddingLeft: "20px" }}
                 type="textarea"
                 name="content"
-                placeholder="Note"
                 onChange={this.handleChange}
                 value={this.state.content}
               />
