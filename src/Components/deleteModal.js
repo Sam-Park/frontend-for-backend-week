@@ -26,14 +26,14 @@ class DeleteModal extends React.Component {
 
 deleteHandle = e => {
   
-  this.setState({
-    modal: !this.state.modal
-  })
   const id = this.props.note._id
   axios.delete(`https://floating-reaches-71125.herokuapp.com/api/notes/${id}`)
   .then(response => {
     console.log(response)
     this.props.history.push('/notes')
+            this.setState({
+              modal: !this.state.modal
+            })
   })
   .catch(err => {
     console.log(err)
