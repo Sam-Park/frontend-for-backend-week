@@ -23,18 +23,18 @@ class SignIn extends Component {
     };
   
     logInUser = event => {
-      event.preventDefault();
+      
       axios
-        .post("https://https://floating-reaches-71125.herokuapp.com/api/login", {
+        .post("https://floating-reaches-71125.herokuapp.com/api/login", {
           username: this.state.username,
           password: this.state.password
         })
         .then(res => {
           console.log("res status", res.status)
-          this.props.history.push('/notes')
           if (res.status === 200) {
             localStorage.setItem("authorization", res.data.token)
-            this.setState({ redirect: true })
+
+            this.props.history.push('/notes')
           }
           console.log("success!, you have been logged in!", res);
         })
