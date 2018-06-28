@@ -29,6 +29,7 @@ class NewNote extends Component {
       content: this.state.content
     })
     .then(response => {
+      this.props.history.push('/notes')
       console.log(response);
     })
     .catch(error => {
@@ -69,7 +70,7 @@ class NewNote extends Component {
                 value={this.state.content}
               />
               <br />
-              <Link onClick={this.forceUpdate} to="/notes">
+              {/* <Link onClick={this.forceUpdate} to="/notes"> */}
                 <Button
                 onClick={this.newNote}
                   style={{
@@ -84,7 +85,7 @@ class NewNote extends Component {
                 >
                   Save
                 </Button>
-              </Link>
+              {/* </Link> */}
             </FormGroup>
           </Form>
         </Col>
