@@ -33,6 +33,7 @@ deleteHandle = e => {
   axios.delete(`https://floating-reaches-71125.herokuapp.com/api/notes/${id}`)
   .then(response => {
     console.log(response)
+    this.props.history.push('/notes')
   })
   .catch(err => {
     console.log(err)
@@ -62,7 +63,7 @@ deleteHandle = e => {
             <br/>
             <br/>
             
-            <Link onClick={this.forceUpdate} to="/notes">
+            {/* <Link onClick={this.forceUpdate} to="/notes"> */}
               <Button
                 color="danger"
                 style={{
@@ -78,7 +79,7 @@ deleteHandle = e => {
               >
                 Delete
               </Button>{" "}
-            </Link>
+            {/* </Link> */}
             <Button
               style={{
                 fontSize: "18px",
