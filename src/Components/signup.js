@@ -32,9 +32,7 @@ class SignUp extends Component {
         password: this.state.password,
       })
       .then(res => {
-        if (res.status === 201) {
-          this.setState({ redirect: true });
-        }
+        this.props.history.push('/notes')
         console.log("success!, you have been registered!", res);
       })
       .catch(error => {
@@ -44,10 +42,7 @@ class SignUp extends Component {
   };
 
   render() {
-    const redirect = this.state.redirect;
-    if (redirect) {
-      return <Redirect to="/notes" />;
-    }
+  
     return (
       <div>
         <Container className="mainContainer" style={{ display: "flex" }}>
