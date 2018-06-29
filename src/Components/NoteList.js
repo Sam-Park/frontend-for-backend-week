@@ -14,17 +14,25 @@ class NoteList extends Component {
       notes: []
       }
   }
-
+  
   componentWillMount() {
-    axios
-    .get('https://floating-reaches-71125.herokuapp.com/api/notes')
-    .then(response => {
-      this.setState(() => ({ notes: response.data }));
-      console.log('notelist state', this.state.notes)
-    })
-    .catch(err => {
-      console.error("Server Error", err);
-    })
+    this.getNotes();
+  }
+  getNotes = () => {
+  //   const config = {
+  //     headers: {
+  //        "Authorization": localStorage.authorization
+  //     }
+  // }
+  axios
+  .get('https://floating-reaches-71125.herokuapp.com/api/notes')
+  .then(response => {
+    this.setState(() => ({ notes: response.data }));
+    console.log('notelist state', this.state.notes)
+  })
+  .catch(err => {
+    console.error("Server Error", err);
+  })
   }
   render() { 
     return (  

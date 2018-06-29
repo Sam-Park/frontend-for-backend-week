@@ -30,6 +30,13 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+.navColHome {
+  background-color: #d8d8d8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 155%;
+}
 
 .noteCard {
   box-shadow: 1px 1px 2px black;
@@ -68,6 +75,9 @@
   background-color: #f3f3f3;
   padding-left: 25px !important;
   text-align: center;
+  height: 155%;
+  flex-grow: 1;
+  
 }
 .mainContainer {
   height: 1000px;
