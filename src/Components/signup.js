@@ -25,7 +25,7 @@ class SignUp extends Component {
 
  
 
-  registerUser = (event) => {
+  registerUser = event => {
     event.preventDefault();
     axios
       .post("https://floating-reaches-71125.herokuapp.com/api/register", {
@@ -54,7 +54,7 @@ class SignUp extends Component {
         <Row style={{ justifyContent: 'center'}} >
           <h1>Register</h1>
           </Row>
-        <Form onSubmit={this.logInUser}>
+        <Form onSubmit={this.registerUser}>
           <InputGroup
    
    style={{
