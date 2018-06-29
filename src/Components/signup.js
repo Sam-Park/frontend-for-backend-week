@@ -25,7 +25,8 @@ class SignUp extends Component {
 
  
 
-  registerUser = () => {
+  registerUser = (event) => {
+    event.preventDefault();
     axios
       .post("https://floating-reaches-71125.herokuapp.com/api/register", {
         username: this.state.username,
