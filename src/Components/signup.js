@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import { InputGroup, Input, Col, Button, Container } from "reactstrap";
+import { Redirect, Link } from "react-router-dom";
+import { InputGroup, Input, Col, Button, Container, Row, Form } from "reactstrap";
 import axios from "axios";
 import NavBar from './NavBar';
 import "./NoteCss.css";
@@ -50,54 +50,52 @@ class SignUp extends Component {
     }
     return (
       <div>
-        <NavBar className="navBar" />
-        <Container style={{ maxWidth: "1500px" }}>
+        <Container className="mainContainer" style={{ display: "flex" }}>
+        <Col sm="3" className="navCol">
+          <NavBar className="navBar" />
+        </Col>
+        <Container className="inputContainer">
+        <Row style={{ justifyContent: 'center'}} >
+          <h1>Register</h1>
+          </Row>
+        <Form onSubmit={this.logInUser}>
           <InputGroup
-            style={{
-              marginTop: "15px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center"
+   
+   style={{
+     marginTop: "15px",
+     display: "flex",
+     justifyContent: "center",
+     alignItems: 'center',
+     flexDirection: "column"
             }}
-          >
-            <Col sm="3">
+            >
+            <Col sm="6">
               <Input
-                style={{
-                  margin: "10px",
-                  boxShadow: "2px 2px 4px"
-                }}
+              style={{ marginBottom: "20px"}}
                 placeholder="username"
                 type="text"
                 onChange={this.handleUsername}
                 value={this.state.username}
-              />
+                />
             </Col>
-            <Col sm="3">
+            <Col sm="6">
               <Input
-                style={{
-                  margin: "10px",
-                  boxShadow: "2px 2px 4px"
-                }}
                 placeholder="password"
                 type="password"
                 onChange={this.handlePass}
                 value={this.state.password}
-              />
+                />
             </Col>
-            <Button
-              color="danger"
-              onClick={this.registerUser}
-              style={{
-                marginTop: "10px",
-                boxShadow: "2px 2px 4px rgb(73, 80, 87)"
-              }}
-            >
+            <Button style={{ marginTop: '20px'}}color="danger" type="submit">
               Submit
             </Button>
+            
+           
           </InputGroup>
-        </Container>
+          </Form>
+          <br />
+              </Container>
+            </Container>
       </div>
     );
   }

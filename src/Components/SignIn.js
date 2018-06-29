@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
-import { Input, InputGroup, Button, Col, Form } from 'reactstrap';
+import { Input, InputGroup, Button, Col, Form, Container, Row } from 'reactstrap';
 import NavBar from './NavBar'
 import "./NoteCss.css";
 class SignIn extends Component {
@@ -30,8 +30,8 @@ class SignIn extends Component {
           password: this.state.password
         })
         .then(res => {
+          this.props.history.push('/notes')
           console.log("success!, you have been logged in!", res);
-            this.props.history.push('/notes')
         })
         .catch(error => {
           console.log("Error", error.message);
@@ -41,52 +41,61 @@ class SignIn extends Component {
     };
   
     render() {
-        const redirect = this.state.redirect
-      if (redirect) {
-          return <Redirect to="/notes" />
-      }
+       console.log("props:", this.props)
         return (
         <div>
-          <NavBar  className="navBar" />
+          <Container className="mainContainer" style={{ display: "flex" }}>
+        <Col sm="3" className="navCol">
+          <NavBar className="navBar" />
+        </Col>
+        <Container className="inputContainer">
+        <Row style={{ justifyContent: 'center'}} >
+          <h1>Log In</h1>
+          </Row>
         <Form onSubmit={this.logInUser}>
           <InputGroup
    
-            style={{
-              marginTop: "15px",
-              display: "flex",
-              justifyContent: "center"
+   style={{
+     marginTop: "15px",
+     display: "flex",
+     justifyContent: "center",
+     alignItems: 'center',
+     flexDirection: "column"
             }}
-          >
-            <Button color="danger" type="submit">
-              Submit
-            </Button>
-            <Col sm="3">
+            >
+            <Col sm="6">
               <Input
+              style={{ marginBottom: "20px"}}
                 placeholder="username"
                 type="text"
                 onChange={this.handleUsername}
                 value={this.state.username}
-              />
+                />
             </Col>
-            <Col sm="3">
+            <Col sm="6">
               <Input
                 placeholder="password"
                 type="password"
                 onChange={this.handlePass}
                 value={this.state.password}
-              />
+                />
             </Col>
+            <Button style={{ marginTop: '20px'}}color="danger" type="submit">
+              Submit
+            </Button>
             
            
           </InputGroup>
           </Form>
           <br />
           <Link
-              style={{ alignSelf: "center", textDecoration: "underline" }}
-              to={"/signup"}
-            >
+              style={{alignSelf: "center", textDecoration: "underline" }}
+              to={"/register"}
+              >
               Don't have an account? Register Here{" "}
             </Link>
+              </Container>
+            </Container>
         </div>
       );
     }

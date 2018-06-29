@@ -7,11 +7,22 @@
 }
 
 .button {
-  width: 175px;
-  background-color: #2BC1C4;
+  width: 200px;
+  background-color: #2BC1C4 !important;
   color: #FFFFFF;
-  padding: 0, 40px; 
-  border-radius: "0";
+  padding: 8px !important; 
+  border-radius: 0 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  box-shadow: 1px 1px 2px black;
+  margin-bottom: 10px;
+  /* fontSize: "18px",
+  fontWeight: "bold",
+  backgroundColor: "#2BC1C4",
+  color: "#FFFFFF",
+ width: '200px',
+  borderRadius: "0",
+  padding: '8px', */
 }
 .navCol {
   background-color: #d8d8d8;
@@ -21,14 +32,14 @@
 }
 
 .noteCard {
-  
+  box-shadow: 1px 1px 2px black;
   margin-top: 10px;
   margin-bottom: 15px;
   height: 230px;
   max-width: 230px;
 }
 .noteCardSingle {
-  
+  box-shadow: 1px 1px 2px black;
   margin-top: 10px;
   margin-bottom: 15px;
   width: 780px;
@@ -52,6 +63,12 @@
   background-color: #f3f3f3;
   padding-left: 25px !important
 }
+.homeContainer {
+  padding-top: 100px;
+  background-color: #f3f3f3;
+  padding-left: 25px !important;
+  text-align: center;
+}
 .mainContainer {
   height: 1000px;
 }
@@ -69,4 +86,11 @@
    
     justify-content: center;
     align-items: center;
+}
+
+.inputContainer {
+  padding-top: 50px;
+  background-color: #f3f3f3;
+  padding-left: 25px !important;
+  text-align: center;
 }

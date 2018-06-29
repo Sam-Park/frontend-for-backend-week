@@ -1,13 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import { Button, Card, CardBody, Container, CardTitle, Row } from "reactstrap";
+import "./NoteCss.css";
+import { Button, Card, CardBody, Container, CardTitle, Row, Col } from "reactstrap";
 
 const Home = () => {
   return (
     <div>
-      <NavBar />
-
+      <Container className="mainContainer" style={{ display: "flex" }}>
+        <Col sm="3" className="navCol">
+          <NavBar className="navBar" />
+        </Col>
+        <Container className="homeContainer">
+        <h1>Welcome to the site</h1>
+    
+    <Link to="/login">
+      <Button
+        color="danger"
+        size="lg"
+        style={{ boxShadow: "1px 1px 3px black", marginBottom: "20px", marginTop: '10px' }}
+      >
+        Log in here to get started!
+      </Button>
+    </Link>
+    <br />
+    <h3>Don't have an Account?</h3>
+    <Link to="/register">
+      <Button
+        color="danger"
+        size="lg"
+        style={{ boxShadow: "1px 1px 3px black", marginTop: "10px" }}
+      >
+        Click here to Register
+      </Button>
+    </Link>
+      
+              </Container>
+            </Container>
+      {/* <Container className="mainContainer">
+      <Col sm="3" className="navCol">
+          <NavBar className="navBar" />
+        </Col>
+        <Container className="notesContainer">
       <h1>Welcome to the site</h1>
     
       <Link to="/login">
@@ -71,6 +105,8 @@ const Home = () => {
       </Row>
           <br />
           <br />
+          </Container>
+</Container> */}
     </div>
   );
 };
